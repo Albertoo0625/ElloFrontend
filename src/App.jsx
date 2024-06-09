@@ -1,13 +1,16 @@
 import React from 'react'
-import Nav from './Nav'
-import Books from './Books'
+import { Route, Routes } from 'react-router-dom'
+import Layout from './Layout'
+import Home from './Home'
+
 function App() {
 
   return (
-    <>
-    <Nav/>
-    <Books/>
-    </>
+    <Routes>
+    <Route path="/" element={<Layout />}>
+      <Route path="/" element={<Home />} />
+    </Route>
+    </Routes>
   )
 }
 

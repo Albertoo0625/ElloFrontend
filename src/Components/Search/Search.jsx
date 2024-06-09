@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, TextField,Box,Button, Grid } from '@mui/material'
-import axios from './api/axios';
+import axios from '../../api/axios';
 
 function Search() {
     const [searchTerm,setSearchTerm]=useState('');
@@ -34,6 +34,9 @@ function Search() {
 const handleChange=(e)=>{
 e.preventDefault();
 setSearchTerm(e.target.value)
+useEffect(()=>{
+  
+},[searchTerm]);
 }
     
   return (

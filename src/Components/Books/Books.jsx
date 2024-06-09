@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import useBooks from './Hooks/useBooks';
-import axios from './api/axios';
+import useBooks from '../../Hooks/useBooks';
+import axios from '../../api/axios';
 import BookItem from './BookItem';
-import { Grid } from '@mui/material';
+import { Grid,Box } from '@mui/material';
 
 
 function Books() {
@@ -41,11 +41,14 @@ try{
   },[setState]);
 
   return (
-           <Grid container spacing={3}>            
+  
+    <Box xs={12} sm={6} md={4} lg={3} sx={{margin: 5, width: '100vw', height: '100vh'}}>
+           <Grid container spacing={2}>            
                        {state.Books.map((book,index)=>{
-                       return <Grid item xs={12} sm={6} md={4} lg={3} key={index} style={{ overflow: 'hidden', height: '100%' ,maxHeight:'400px'}}><BookItem book={book} key={index}/> </Grid>
+                       return <Grid item key={index} sx={{width:'300px',height:'500px',margin:'1px',overflow:'hidden'}}><BookItem book={book} key={index}/> </Grid>
                        })}        
             </Grid>
+    </Box>
   );
 }
 
