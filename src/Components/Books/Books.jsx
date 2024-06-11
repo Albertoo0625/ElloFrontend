@@ -27,7 +27,7 @@ try{
         }
       });
 
-        console.log(results);
+        // console.log(results);
         setState((prevState) => ({
           ...prevState,
           Books: results.data.data.books
@@ -45,7 +45,7 @@ try{
     <Box xs={12} sm={6} md={4} lg={3} sx={{margin: 5, width: '100vw', height: '100vh'}}>
            <Grid container spacing={2}>            
                        {state.Books.map((book,index)=>{
-                       return <Grid item key={index} sx={{width:'300px',height:'500px',margin:'1px',overflow:'hidden'}}><BookItem book={book} key={index}/> </Grid>
+                       return <Grid item key={index} sx={{width:'300px',height:'500px',margin:'1px',overflow:'hidden'}}><BookItem book={book} key={index} id={index}/> </Grid>
                        })}        
             </Grid>
     </Box>

@@ -1,33 +1,36 @@
-import { Box, Typography } from '@mui/material'
-import React from 'react'
+import React, { useEffect } from 'react';
+import useBooks from '../../Hooks/useBooks';
+import SearchItem from './SearchItem';
+import { Grid,Box } from '@mui/material';
 
-function SearchList(props) {
-  const {title,author,coverPhotoURL,readingLevel}=props;
-  const image=`src\\${coverPhotoURL}`
-   const Title={
-    whiteSpace: nowrap,       /* Prevents text from wrapping to multiple lines */
-    overflow: hidden,          /* Ensures that overflowed text is hidden */
-    textOverflow: ellipsis,   /* Adds ellipsis (...) to indicate overflowed text */
-    width: '20px',             /* Set the desired width */
-    display: inline-block     /* Ensure it respects the width */
-   }
-   const ContainerDiv={
-    alignSelf:center,
-   }
+function SearchList() {
+  const { state,setState } = useBooks();
+  // console.log(`states fromlist ${JSON.stringify(state)}`)
+  useEffect(() => {
+    const fetchBooks = async () => {   
+      const searchListLocal = JSON.parse(localStorage.getItem('SearchList'));
+      // console.log(`SearchList from local storage: ${JSON.stringify(searchListLocal)}`);
+      if (searchListLocal) {
+          setState(prevState => ({
+              ...prevState,
+              SearchList: searchListLocal
+          }));
+      }
+    };
+
+    fetchBooks();
+  },[setState]);
+
   return (
-   <Box sx={{ContainerDiv}}>
-    <Typography sx={{Title}}>
-    {title}
-    </Typography>
-    <Typography sx={{Author}}>
-    {author}
-    </Typography>
-    <Typography sx={{ReadingLevel}}>
-    {readingLevel}
-    </Typography>
-    <img src={image} alt="book_Image"/>
-   </Box>
-  )
+  
+    <Box xs={12} sm={6} md={4} lg={3} sx={{margin: 5, width: '100vw', height: '100vh'}}>
+           <Grid container spacing={2}>            
+                       {state.SearchList.map((book,index)=>{
+                       return <Grid item key={index} sx={{width:'300px',height:'500px',margin:'1px',overflow:'hidden'}}><SearchItem book={book} key={index} id={index}/> </Grid>
+                       })}        
+            </Grid>
+    </Box>
+  );
 }
 
-export default SearchList
+export default SearchList;

@@ -1,7 +1,8 @@
 
 import React from 'react'
-import Nav from './Nav'
+
 import Books from './Components/Books/Books'
+import Nav from './Components/Navigation/Nav'
 
 function Home() {
   return (
