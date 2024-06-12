@@ -9,7 +9,7 @@ function ReadList() {
   useEffect(() => {
     const fetchBooks = async () => {   
       const ReadListLocal = JSON.parse(localStorage.getItem('ReadList'));
-      if(ReadList.length<2){
+      if(state.ReadList.length<1){
         alert("List empty please add a book");
       }
     //   console.log(`SearchList from local storage: ${JSON.stringify(ReadListLocal)}`);
