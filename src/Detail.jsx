@@ -23,13 +23,13 @@ function Detail() {
 
  console.log(state.Details);
 
-  const image=`src\\${state.Details.coverPhotoURL}`
+  // const image=`src\\${state.Details.coverPhotoURL}`
   return (
     <Container>
       <Box>
         <Box sx={{display:'flex',flexDirection:'row', width: '100vw', height: '80vh'}}>
         <Box xs={12} sm={6} md={4} lg={3} sx={{margin: 5, width: '60vw', height: '70vh'}}>
-        <img src={image} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover'}} />
+        <img src={book.coverPhotoURL} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover'}} />
         </Box >
         <Typography  variant="detail" sx={{width: '40vw',margin:'2rem' }}>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi alias neque amet possimus dolores architecto expedita eveniet modi recusandae ea, asperiores natus nesciunt iure laborum nemo facilis minima dolor dolorem!
