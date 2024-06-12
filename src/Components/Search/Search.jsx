@@ -161,7 +161,7 @@ function Search() {
                         type="submit"
                         variant="contained"
                         onClick={()=>{handleSubmit(searchTerm)}}
-                        sx={{ mt: 3, mb: 2 ,width: "45vw"}}
+                        sx={{ mt: 3, mb: 2 ,width: "45vw",mr:"5vw"}}
                     >
                         Search
                     </Button>
