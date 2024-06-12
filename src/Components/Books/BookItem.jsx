@@ -19,23 +19,20 @@ function BookItem(props) {
 
 
 
-  const handleClick=()=>{
+  const handleClick=(book)=>{
    
     localStorage.setItem('details',JSON.stringify(book));
     setState((prevState) => ({
       ...prevState,
       Details: book
     }));
-
- 
-
     navigate('/details')
   }
 
   return (
     <Paper elevation={8} square={false} sx={{margin:0}} >
      <Box sx={{sx}} >
-          <Box sx={{ height: '60%' }} onClick={handleClick} >
+          <Box sx={{ height: '60%' }} onClick={()=>{handleClick(book)}} >
           <img src={book.coverPhotoURL} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover'}} />
           </Box>
 
