@@ -46,4 +46,4 @@ const BASE_URL='https://ellobackend.onrender.com/graphql';
 const BASE_URL='http://localhost:4000/graphql';
 ```
 
-### Finally you can view the Frontend with a search feature complete with a scrollable suggestions feature with every key stroke and booksList,Detais page,ReadingList with add and remove functionalities
+### Finally you can view the Frontend with a search feature complete with a scrollable suggestions feature with every key stroke and booksList,Details page,ReadingList with add and remove functionalities
